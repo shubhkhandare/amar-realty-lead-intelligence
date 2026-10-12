@@ -1,0 +1,28 @@
+# Secrets - never commit
+.env
+*.key
+*.pem
+secrets.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Scraped data, databases, logs (keep folders, not contents)
+db/*.db
+db/*.sqlite
+data/raw/*
+data/clean/*
+!data/raw/.gitkeep
+!data/clean/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# Playwright / editor / OS
+.playwright/
+.vscode/
+.idea/
+.DS_Store
