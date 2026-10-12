@@ -9,13 +9,6 @@ Build a reproducible pipeline to discover, extract, clean, validate, store, and 
 - Hadapsar, Pune
 - Fursungi, Pune
 
-## Open Questions
-
-- What exactly qualifies as a prospect?
-- Which public sources are permitted?
-- What fields are mandatory in the final lead sheet?
-- How should Location, Intent, and Recency be scored?
-- What validation criteria define a clean prospect?
 
 ## Compliance Rules
 
