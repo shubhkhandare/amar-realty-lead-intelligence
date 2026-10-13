@@ -77,3 +77,17 @@ Top 100 sheet, and what are the remaining schema columns?
 ## 9. Plan
 
 See the roadmap table in README.md.
+
+## 10. Source search outcome (13/10/2026)
+
+| Source | What I checked | Result |
+|---|---|---|
+| CommonFloor Hadapsar forum | robots.txt allows /forum/; keyword check of Terms found no restriction | Used. 10 posts from 2016-2019, no phone numbers, about half not buyer intent |
+| NoBroker forum | robots.txt does not disallow /forum/; Terms not checked | Not scraped. Only 2 relevant posts, no phone |
+| Square Yards | robots.txt allows agent pages | Rejected. Agents are the seller side, not buyers |
+| Quikr | robots.txt disallows ad pages (/view-ad*) | Rejected |
+| Clickindia | robots.txt disallows ad detail pages | Rejected |
+| Indian Real Estate Forum | Page not reachable | Not used |
+| Housing.com | robots.txt blocks many paths; sellers and agents only | Not used |
+
+**Conclusion.** Among the sources I could find and verify, none provides recent buyer posts with a public phone number. I will not fabricate or infer contact data. The Top 100 count may be below 100, and the reasons will be documented in each DPR. If Amar Realty confirms a permitted source, or that the phone field may be empty, the pipeline can adapt.
