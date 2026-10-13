@@ -1,6 +1,6 @@
 # CANDIDATE DAILY PROGRESS REPORT (DPR)
 - **Candidate Name:** Shubham Khandare | **Target Role:** Lead Intelligence & Data Engineer
-- **Evaluation Day:** Day 2 | **Date:** 13/10/2026 | **Git Commit Hash:** 1e077ff
+- **Evaluation Day:** Day 2 | **Date:** 13/10/2026 | **Git Commit Hash:** 894ce71
 
 ## 1. Daily Engineering Tasks Completed
 - [+] Wrote scripts/fetch_page.py: robots.txt check, 1.5-3.0 s random delay, own User-Agent, stop on HTTP 403/429.
