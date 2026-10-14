@@ -30,3 +30,67 @@ def clean_phone(raw):
         
 
 
+
+
+def clean_name(raw):
+    """Tidy a name: one space between words, Title Case. Empty -> 'Valued Prospect'."""
+    if raw is None:
+        return "Valued Prospect"
+    name = re.sub(r"\s+", " ", str(raw)).strip()   # collapse extra spaces
+    name = re.sub(r"\s+,", ",", name)               # no space before a comma
+    if not name:
+        return "Valued Prospect"
+    return name.title()
+
+
+# Most specific areas first, the general one (Hadapsar) last.
+LOCATION_PATTERNS = [
+    ("Fursungi", r"fursung\w*|phursung\w*"),
+    ("Handewadi", r"handewadi"),
+    ("Ramtekdi", r"ramtekdi"),
+    ("Magarpatta", r"magarpatta|mararpatta"),
+    ("Hadapsar", r"hadap\w*"),
+]
+
+
+def normalize_location(*texts):
+    """Look for a known area in each text, in order. Return its standard spelling or None."""
+    for text in texts:
+        if not text:
+            continue
+        for standard, pattern in LOCATION_PATTERNS:
+            if re.search(pattern, str(text), flags=re.IGNORECASE):
+                return standard
+    return None
+
+
+def clean_name(raw):
+    """Tidy a name: one space between words, Title Case. Empty -> 'Valued Prospect'."""
+    if raw is None:
+        return "Valued Prospect"
+    name = re.sub(r"\s+", " ", str(raw)).strip()   # collapse extra spaces
+    name = re.sub(r"\s+,", ",", name)               # no space before a comma
+    if not name:
+        return "Valued Prospect"
+    return name.title()
+
+
+# Most specific areas first, the general one (Hadapsar) last.
+LOCATION_PATTERNS = [
+    ("Fursungi", r"fursung\w*|phursung\w*"),
+    ("Handewadi", r"handewadi"),
+    ("Ramtekdi", r"ramtekdi"),
+    ("Magarpatta", r"magarpatta|mararpatta"),
+    ("Hadapsar", r"hadap\w*"),
+]
+
+
+def normalize_location(*texts):
+    """Look for a known area in each text, in order. Return its standard spelling or None."""
+    for text in texts:
+        if not text:
+            continue
+        for standard, pattern in LOCATION_PATTERNS:
+            if re.search(pattern, str(text), flags=re.IGNORECASE):
+                return standard
+    return None

@@ -3,10 +3,9 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
-from cleaner import clean_phone  # noqa: E402
+from cleaner import clean_name, clean_phone, normalize_location  # noqa: E402
 
 PHONE_CASES = [
-    # (input, expected result)
     ("9000000001", "9000000001"),
     ("+91 90000 00001", "9000000001"),
     ("+919000000001", "9000000001"),
@@ -21,15 +20,46 @@ PHONE_CASES = [
     (None, None),
 ]
 
+NAME_CASES = [
+    ("kailash", "Kailash"),
+    ("  smith   aggewal ", "Smith Aggewal"),
+    ("Deepa , Apartment Resident", "Deepa, Apartment Resident"),
+    ("", "Valued Prospect"),
+    ("   ", "Valued Prospect"),
+    (None, "Valued Prospect"),
+]
+
+# Each case: (list of texts to search in order, expected area)
+LOCATION_CASES = [
+    (["Buying property in Hadapasr", "How far from Phursungi IT Park?"], "Hadapsar"),
+    (["Residential property at Ramtekdi Industrial area", ""], "Ramtekdi"),
+    (["Flats in Phursungi", ""], "Fursungi"),
+    (["Water problem", "Is there a water problem in handewadi area?"], "Handewadi"),
+    (["Konark Bella Vista", "2BHK flats in Mararpatta"], "Magarpatta"),
+    (["Vastu review for kumar prospera Pune", "five walls in the main bed room"], None),
+    ([None, ""], None),
+]
+
 
 def run():
     failed = 0
-    for given, expected in PHONE_CASES:
-        got = clean_phone(given)
+    total = 0
+
+    def check(label, given, got, expected):
+        nonlocal failed, total
+        total += 1
         ok = got == expected
         failed += not ok
-        print("PASS" if ok else "FAIL", repr(given), "->", repr(got), "(expected", repr(expected) + ")")
-    print(f"\n{len(PHONE_CASES) - failed} passed, {failed} failed")
+        print("PASS" if ok else "FAIL", label, repr(given), "->", repr(got), "(expected", repr(expected) + ")")
+
+    for given, expected in PHONE_CASES:
+        check("phone", given, clean_phone(given), expected)
+    for given, expected in NAME_CASES:
+        check("name", given, clean_name(given), expected)
+    for texts, expected in LOCATION_CASES:
+        check("location", texts, normalize_location(*texts), expected)
+
+    print(f"\n{total - failed} passed, {failed} failed")
     return failed
 
 
