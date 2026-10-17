@@ -1,6 +1,6 @@
 # CANDIDATE DAILY PROGRESS REPORT (DPR)
 - **Candidate Name:** Shubham Khandare | **Target Role:** Lead Intelligence & Data Engineer
-- **Evaluation Day:** Day 6 | **Date:** 17/10/2026 | **Git Commit Hash:** Pending
+- **Evaluation Day:** Day 6 | **Date:** 17/10/2026 | **Git Commit Hash:** 64cd9c3
 
 ## 1. Daily Engineering Tasks Completed
 - [+] Created `scripts/pilot_export.py` to select and rank the top 20 leads (9 available in the database) and export a masked pilot dataset to `data/samples/pilot_batch_masked.csv`.
