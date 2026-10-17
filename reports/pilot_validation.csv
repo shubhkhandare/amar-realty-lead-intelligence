@@ -1,0 +1,10 @@
+lead_id,rule_level,rule_tag,human_tag,match,rule_score,intent_pts_rule,intent_pts_human,text_missing
+1,enquiry,enquiry_only,enquiry_only,True,50,20,20,False
+2,rental,rental_only,off_topic,False,35,5,5,False
+3,explicit_buy,genuine_buyer,enquiry_only,False,75,35,20,False
+4,explicit_buy,genuine_buyer,genuine_buyer,True,75,35,35,False
+5,enquiry,enquiry_only,enquiry_only,True,45,20,20,False
+6,enquiry,enquiry_only,enquiry_only,True,50,20,20,True
+7,enquiry,enquiry_only,enquiry_only,True,50,20,20,False
+8,explicit_buy,genuine_buyer,genuine_buyer,True,60,35,35,False
+9,seller_or_ad,not_a_buyer,not_a_buyer,True,25,0,0,False

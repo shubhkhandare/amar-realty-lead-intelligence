@@ -71,6 +71,30 @@ def score_lead(row, today):
             "recency_pts": rec, "score": min(100, loc + intent + rec)}
 
 
+def data_quality_flags(row):
+    """Identify missing information without changing the lead score."""
+    text_missing = not (row.get("question") or "").strip()
+
+    phone_fields = ("phone", "phone_number", "mobile", "contact_number")
+    phone_missing = not any(
+        str(row.get(field) or "").strip()
+        for field in phone_fields
+    )
+
+    flags = []
+    if text_missing:
+        flags.append("text_missing")
+    if phone_missing:
+        flags.append("no_phone")
+
+    return {
+        "text_missing": text_missing,
+        "phone_missing": phone_missing,
+        "data_quality_flags": "|".join(flags),
+    }
+
+
+
 def main():
     today = date.today()
     con = sqlite3.connect("db/leads.db")
@@ -79,6 +103,7 @@ def main():
 
     for lead in leads:
         lead.update(score_lead(lead, today))
+        lead.update(data_quality_flags(lead))
         con.execute("UPDATE leads SET score = ? WHERE lead_id = ?", (lead["score"], lead["lead_id"]))
     con.commit()
     con.close()
@@ -88,7 +113,8 @@ def main():
         lead["rank"] = rank
 
     columns = ["rank", "lead_id", "name", "location", "intent_level", "location_pts",
-               "intent_pts", "recency_pts", "score", "posted_date", "title", "thread_url"]
+               "intent_pts", "recency_pts", "score", "posted_date", "title", "thread_url",
+               "text_missing", "phone_missing", "data_quality_flags"]
     os.makedirs("data/clean", exist_ok=True)
     os.makedirs("data/samples", exist_ok=True)
 

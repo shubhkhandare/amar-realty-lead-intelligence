@@ -1,0 +1,10 @@
+lead_id,tag,note
+3,enquiry_only,Asks about investment location and connectivity
+4,genuine_buyer,Explicitly looking to buy resale property
+8,genuine_buyer,Considering investment in a ready flat
+1,enquiry_only,Asks about Vastu and flat layout
+6,enquiry_only,Asks about project amenities; post text missing
+7,enquiry_only,NRI asks for project details and contact
+5,enquiry_only,Visited site and asks about water problems
+2,off_topic,General discussion about rental regulations
+9,not_a_buyer,Builder promotional advertisement

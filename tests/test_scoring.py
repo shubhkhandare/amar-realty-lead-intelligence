@@ -20,6 +20,8 @@ CHECKS = [
     ("buyer who says 'available'", intent_level_and_points("Flat in Ramtekdi", "Is it wise to invest in a flat? Some ready flats available.")[1], 35),
     ("real buyer text", intent_level_and_points("Dreams Aakruti", "I am looking to buy a resale property.")[1], 35),
     ("concern from site visitor", intent_level_and_points("About water problem", "I visited the site. Is there any problem of water?")[1], 20),
+    ("builder promo with invest", intent_level_and_points("Flats in Magarpatta", "Discover the elegant design. Invest your money in right property.")[1], 0),
+    ("buyer says want to invest", intent_level_and_points("Flat help", "I want to invest in a 2BHK flat.")[1], 35),
     ("date with th", parse_date("28th July 2019"), date(2019, 7, 28)),
     ("date with nd", parse_date("2nd August 2018"), date(2018, 8, 2)),
     ("bad date", parse_date("soon"), None),
