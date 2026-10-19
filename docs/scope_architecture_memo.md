@@ -91,3 +91,23 @@ See the roadmap table in README.md.
 | Housing.com | robots.txt blocks many paths; sellers and agents only | Not used |
 
 **Conclusion.** Among the sources I could find and verify, none provides recent buyer posts with a public phone number. I will not fabricate or infer contact data. The Top 100 count may be below 100, and the reasons will be documented in each DPR. If Amar Realty confirms a permitted source, or that the phone field may be empty, the pipeline can adapt.
+
+
+
+---
+
+## Final update (Day 7)
+
+This section records what changed from the Day 1 plan. The text above is kept as it was written.
+
+**Source.** The pipeline ended up using one public source, the CommonFloor forum, with plain requests and BeautifulSoup. Playwright was not needed because the pages load without JavaScript.
+
+**Outcome.** 9 posts were collected, 7 were exported as prospects, and none has a phone number. The target of up to 100 prospects was not reached. Reason: one source with old posts (2016-2019) is too small.
+
+**Eligibility decision.** Builder advertisements and rental-only posts are not purchase prospects, so they are excluded from the export. Every exclusion is logged by lead id in `reports/export_exclusions.csv`.
+
+**Scoring.** Location 40 + Intent 35 + Recency 25. Because all posts are old, Recency is 0 and the highest possible score here is 75. Rules were checked against a self-review of the 9 posts (7 of 9 agreed). This is not sales feedback.
+
+**Privacy.** Names and the database stay out of Git. The repo holds masked samples (`A***`). The file with real names goes only by email.
+
+**Next steps if the project continues.** Add more public sources, check robots.txt for each, keep the same delay rules, and replace the self-review with real sales feedback.
