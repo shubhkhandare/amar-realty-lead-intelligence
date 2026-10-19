@@ -1,0 +1,3 @@
+lead_id,intent_level,score,reason
+2,rental,35,"rental topic, not a purchase prospect"
+9,seller_or_ad,25,"builder or seller advertisement, not a prospect"

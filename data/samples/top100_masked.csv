@@ -1,0 +1,8 @@
+rank,name,phone,location,score,intent_level,posted_date,source_name,source_url,data_quality_flags
+1,A***,,Hadapsar,75,explicit_buy,2nd August 2018,CommonFloor forum,https://www.commonfloor.com/forum/5b62f7b64b528-buying-property-in-hadapasr,no_phone
+2,A***,,Hadapsar,75,explicit_buy,4th October 2017,CommonFloor forum,https://www.commonfloor.com/forum/59d4ae3d55e2b-project-review-of-dreams-aakruti--hadapsar-pune,no_phone
+3,D***,,Ramtekdi,60,explicit_buy,29th July 2016,CommonFloor forum,https://www.commonfloor.com/forum/579afcea90685-residential-property-at-ramtekdi-industrial-area,no_phone
+4,A***,,Hadapsar,50,enquiry,28th July 2019,CommonFloor forum,https://www.commonfloor.com/forum/5d3cee509b26d-vastu-review-for-kumar-prospera-pune,no_phone
+5,P***,,Hadapsar,50,enquiry,20th March 2017,CommonFloor forum,https://www.commonfloor.com/forum/58cfc97dd85ee-what-are-the-amenities-and-facilities-are-going-to-deliver-the-developer-of-this-project--,text_missing|no_phone
+6,V***,,Hadapsar,50,enquiry,14th September 2016,CommonFloor forum,https://www.commonfloor.com/forum/57d97ab158f8b-i-am-an-nri.-whom-should-i-contact-for-further-details--,no_phone
+7,K***,,Handewadi,45,enquiry,26th April 2017,CommonFloor forum,https://www.commonfloor.com/forum/5900696a71452-about-water-problem,no_phone
