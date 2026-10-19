@@ -53,10 +53,6 @@ Python, SQLite (`sqlite3`), CSV, regex (`re`), `datetime`, PowerShell, Git.
 - `data/samples/pilot_batch_masked.csv`
 - `data/samples/self_review_tags.csv`
 - `reports/pilot_validation.csv`
+- reports/pipeline_optimization.diff: Day 5 to Day 6 changes in scoring code and tests
+- reports/audit_report.md: data summary, compliance audit, pilot review, limitations
 
-## 7. Pending Tasks
-- [ ] Verify the actual phone/contact column names in the `leads` table.
-- [ ] Confirm that self-review notes are clearly labelled in the database.
-- [ ] Run the relevant scoring tests after the quality-flag changes.
-- [ ] Review the final Git status and ensure private data files are not staged.
-- [ ] Commit and push the verified Day 6 deliverables.
